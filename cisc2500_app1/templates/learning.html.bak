@@ -1,0 +1,29 @@
+<HTML>
+    <head>
+    <TITLE>Creating forms</TITLE>
+    </head>
+   <body>
+     <p>Please fill out this form!</p>
+    <form action="/survey" method="post"> {% csrf_token %}
+      <p>The pace of the class is:</p>
+      &nbsp; <input id="fast" name="pace_of_class" value="3" type="radio">
+      &nbsp; <label for="fast">Too Fast!</label><br>
+      &nbsp; <input id="slow" name="pace_of_class" value="1" type="radio">
+      &nbsp; <label for="slow">Too Slow!</label><br>
+      &nbsp; <input id="right" name="pace_of_class" value="2" type="radio">
+      &nbsp; <label for="right">Just Right!<br>
+        <br>
+      <p>
+        What programming Languages would you like to use next?
+      </p>
+      <input type="checkbox" id="programming1" name="C" value="C">
+				<label for="vehicle1"> C </label><br>
+				<input type="checkbox" id="programming2" name="Javascript" value="Javascript">
+				<label for="vehicle2"> Javascript </label><br>
+				<input type="checkbox" id="programming3" name="Java" value="java">
+				<label for="vehicle3"> Java </label><br>
+        <br>
+        <br>
+      </label> <label for="comment">What is your comment: </label>  </form>
+   </body>
+</html>
