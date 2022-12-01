@@ -1,33 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Django Page Test</title>
-</head>
-
-<body>
-<p>&nbsp;</p>
-	{% load static %}
-	<img src="test/logo.png" width="600" height="125" alt=""/>
-	<div>
-        <p>CISC2500-L01 Information and Data Management</p>
-	    <p>Evan J. Williams, Instructor</p>
-		<p>November 7, 2022</p>
-	</div>
-	<div><h2>Please complete the survey!</h2></div>
-	<form action="fordham" method="post">
-        {% csrf_token %}
-		  <p>The pace of the class is:</p>
-  <input type="radio" id="fast" name="pace_of_class" value="3">
-  <label for="fast">Too Fast!</label><br>
-  <input type="radio" id="slow" name="pace_of_class" value="1">
-  <label for="slow">Too Slow!</label><br>
-  <input type="radio" id="right" name="pace_of_class" value="2">
-  <label for="right">Just Right!</label><br>
-		<label for="your_name">Your
-        name: </label> <input id="your_name" name="your_name"
-        value="{{ current_name }}" type="text">
-		<input value="OK" type="submit">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Django Page Test</title>
+  </head>
+  <body>
+    <p>&nbsp;</p>
+    {% load static %} <img src="test/logo.png" alt="" height="125" width="600">
+    <div>
+      <p>CISC2500-L01 Information and Data Management</p>
+      <p>Evan J. Williams, Instructor</p>
+      <p>November 7, 2022</p>
+    </div>
+    <div>
+      <h2>Please enter tte state</h2>
+    </div>
+    <form action="results" method="post"> {% csrf_token %}
+      <label for="state">Choose a State:</label>
+  <select id="state" name="state">
+    <option value="NY">New York</option>
+    <option value="NJ">New Jersey</option>
+  </select>
+     <input value="OK" type="submit">
     </form>
-</body>
+  </body>
 </html>

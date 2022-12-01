@@ -8,6 +8,9 @@ urlpatterns = [
     path('fordham',views.fordham,name='fordham'),
     path('survey', views.get_name, name='survey'),
     path('thanks',views.thanks,name='thanks'),
+    path('dataload',views.dataload,name='dataload'),
+    path('state',views.state,name='state'),
+    path('results',views.results,name='results'),
     path('opensecrets',views.opensecrets,name='opensecrets')
 ]
 

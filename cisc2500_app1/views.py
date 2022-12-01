@@ -54,12 +54,35 @@ def index(request):
 def learning(request):
     return HttpResponse("<!DOCTYPE html><html><head><title>Page Title</title></head><body><h1>This is a Heading</h1><p>This is a paragraph.</p></body></html>")
 
-def fordham(request):
+def dataload(request):
+    return HttpResponse("loading data")
+
+def fordham(request):   
+    context = {"New Jersey":"NJ",
+              "New York":"NY"}    
+    return render(request, 'fordham.html', context=context)
+    #return HttpResponse("by state")
+
+def state(request):
+    states = {"New Jersey":"NJ",
+              "New York":"NY"}
     context = {
-           'my_name': "Evan J. Williams",
+           'states': states,
     }    
     # Render the HTML template index.html with the data in the context variable
-    return render(request, 'fordham.html', context=context)    
+    return render(request, 'state.html', context=context)    
+
+def results(request):
+    # https://stackoverflow.com/questions/60940959/how-do-i-convert-wsgirequest-to-string
+    response_value = request.__dict__
+    aList = []
+    for item in response_value:
+        aList.append(item)
+        aList.append(":")
+#    params = request.content_params
+    #state = response_value.find("state")
+    return HttpResponse(aList)
+    
 
 def survey(request):
     context = {
